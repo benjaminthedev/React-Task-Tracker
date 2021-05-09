@@ -110,3 +110,9 @@ footer {
   margin-top: 30px;
   text-align: center;
 }
+
+.search__Bar {
+  padding: 10px 10px;
+  width: 80%;
+  margin-top: 20px;
+}
