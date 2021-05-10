@@ -1,7 +1,8 @@
 import React from 'react'
 
-const Search = () => {
+// Will hook this up to an api call and search based on text 
 
+const Search = () => {
 
     return (
         <div>
