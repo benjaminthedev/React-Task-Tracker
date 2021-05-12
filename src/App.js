@@ -36,14 +36,21 @@ const App = () => {
         reminder: 'true'
     }
 
-])
+]);
+
+
+//Remove task
+const removeTask = (id) => {
+  console.log('task removed', id);
+  setTasks(tasks.filter((task) => task.id !== id))
+}
 
 
   return (
     <div className="container">
       <Header title='ReactJS Task Tracker' />
       <Search />
-      <Task tasks={tasks}/>
+      {tasks.length > 0 ? (<Task tasks={tasks} onRemove={removeTask}/>) : ('No tasks found please add one')}
     </div>
   );
 }
