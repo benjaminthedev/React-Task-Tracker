@@ -1,12 +1,10 @@
-const Tasks = ({ tasks }) => {
+import Task from './Task'
+
+const Tasks = ({ tasks, onRemove }) => {
     return (
         <>
             {tasks.map((task) => (
-                <div key={task.id}>
-                    <h3>{task.text}</h3>
-                    <p>{task.day}</p>
-                    <p>{task.reminder}</p>
-                </div>
+                <Task key={task.id} task={task} onRemove={onRemove}/>                  
             ))}
         </>
     )
