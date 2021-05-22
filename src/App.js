@@ -40,6 +40,26 @@ const App = () => {
 ]);
 
 
+// Show/Hide the task section area
+const [showAddTask, setShowAddTask] = useState(false)
+
+//Need the ability to search through the tasks!
+
+//Add Task
+const addTask = (task) => {
+  // Giving the ID a random number
+  const id = Math.floor(Math.random() * 1000 + 2);
+
+  const newTask = {id, ...task}
+
+  setTasks([...tasks, newTask]);
+
+  console.log(id);
+  console.log(task);
+} 
+
+
+
 //Remove task
 const removeTask = (id) => {
   console.log('task removed', id);
@@ -55,9 +75,12 @@ const reminder = (id) => {
 
   return (
     <div className="container">
-      <Header title='ReactJS Task Tracker' />
+      
+      <Header title='Task Tracker' onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask}  />
+      
+      {showAddTask && <AddTask onAdd={addTask} />}
+      
       <Search />
-      <AddTask />
       {tasks.length > 0 ? (<Task tasks={tasks} onRemove={removeTask} onToggle={reminder}/>) : ('No tasks found please add one')}
     </div>
   );
