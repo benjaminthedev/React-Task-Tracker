@@ -1,43 +1,21 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import Search from './components/Search'
 import Task from './components/Tasks'
 import AddTask from './components/AddTask'
 
 const App = () => {
-  const [tasks, setTasks] = useState([
-    {
-        id: 1,
-        text: 'Get Jab',
-        day: '5th Feb 2020',
-        reminder: 'true'
-    },
-    {
-        id: 2,
-        text: 'Get Foods',
-        day: '5th Feb 2021',
-        reminder: 'false'
-    },
-    {
-        id: 3,
-        text: 'Sleep',
-        day: '5th Feb 2020',
-        reminder: 'true'
-    },
-    {
-        id: 4,
-        text: 'Get ssssss',
-        day: '5th Feb 2020',
-        reminder: 'false'
-    },
-    {
-        id: 5,
-        text: 'Get Jab',
-        day: '5th Feb 2020',
-        reminder: 'true'
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const res = await fetch('http://localhost:5000/tasks');
+      const data = await res.json()
+      console.log(data);
     }
 
-]);
+    fetchTasks()
+  }, [])
 
 
 // Show/Hide the task section area
