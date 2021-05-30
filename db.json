@@ -1,34 +1,16 @@
 {
   "tasks": [
     {
-        "id": 1,
-        "text": "Get Jab",
-        "day": "5th Feb 2020",
-        "reminder": "true"
+      "text": "Seventh Art",
+      "day": "Today",
+      "reminder": true,
+      "id": 1
     },
     {
-        "id": 2,
-        "text": "Get Jab",
-        "day": "5th Feb 2020",
-        "reminder": "true"
-    },
-    {
-        "id": 3,
-        "text": "Get Jab",
-        "day": "5th Feb 2020",
-        "reminder": "true"
-    },
-    {
-        "id": 4,
-        "text": "Get Jab",
-        "day": "5th Feb 2020",
-        "reminder": "true"
-    },
-    {
-        "id": 5,
-        "text": "Get Jab",
-        "day": "5th Feb 2020",
-        "reminder": "true"
+      "text": "Have a cup of tea",
+      "day": "This morning",
+      "reminder": true,
+      "id": 2
     }
   ]
 }
